@@ -16,7 +16,7 @@ public class DownloadFileFromHdfs {
         //本地文件路径
         String local_filename = "/Users/lintao/fileFromHdfs.txt";
         //HDFS文件路径
-        String hdfs_filename = "hdfs://h1:8020/test/output1/part-r-00000";
+        String hdfs_filename = "hdfs://h1:10080/test/output1/part-r-00000";
         //配置文件对象
         try {
             Configuration conf = new Configuration();
