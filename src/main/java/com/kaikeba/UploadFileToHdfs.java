@@ -11,7 +11,7 @@ import static java.net.URI.*;
 
 
 public class UploadFileToHdfs {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         //本地文件路径
         String src_filename = "/Users/lintao/en5tcpdump.cacp";
         //HDFS文件路径
@@ -25,7 +25,7 @@ public class UploadFileToHdfs {
             FileSystem fs = FileSystem.get(create(dest_filename), conf);
             OutputStream output = fs.create(new Path(dest_filename));
             IOUtils.copyBytes(input, output, 4096, true);
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             System.out.println("Exception");
             e.printStackTrace();
         }
