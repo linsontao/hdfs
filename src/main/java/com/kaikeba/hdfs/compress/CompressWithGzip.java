@@ -1,4 +1,4 @@
-package com.kaikeba;
+package com.kaikeba.hdfs.compress;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -16,15 +16,16 @@ import java.io.OutputStream;
 import static java.net.URI.create;
 
 
-public class UploadFileToHdfsWithCompress {
+public class CompressWithGzip {
     public static void main(String[] args) {
         //本地文件路径
-        String src_filename = "/Users/lintao/medicalserver-logs-2.log";
+        String src_filename = "/Users/lintao/jxplorerjxconfig.txt";
         //HDFS文件路径
-        String dest_filename = "hdfs://h1:8020/medicalserver-compress.log";
+        String dest_filename = "hdfs://h1:8020/jxplorerjxconfig.gzip";
         try {
             //创建输入流
-            String codeClassName = "org.apache.hadoop.io.compress.BZip2Codec";
+            // DZIP压缩
+            String codeClassName = "org.apache.hadoop.io.compress.GzipCodec";
             Class<?> codecClass = Class.forName(codeClassName);
             InputStream input = new BufferedInputStream(new FileInputStream(src_filename));
             //创建配置文件对象
