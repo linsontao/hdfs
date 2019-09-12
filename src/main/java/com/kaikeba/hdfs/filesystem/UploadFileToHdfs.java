@@ -13,9 +13,9 @@ import static java.net.URI.*;
 public class UploadFileToHdfs {
     public static void main(String[] args) {
         //本地文件路径
-        String src_filename = "/Users/lintao/jxplorerjxconfig.txt";
+        String src_filename = "/Users/lintao/IdeaProjects/kkb/hadoop/target/hadoop-1.0-SNAPSHOT.jar";
         //HDFS文件路径
-        String dest_filename = "hdfs://h1:8020/jxplorerjxconfig_nocompress";
+        String dest_filename = "hdfs://h1:8020/hadoop-1.0-SNAPSHOT.jar";
         try {
             //创建输入流
             InputStream input = new BufferedInputStream(new FileInputStream(src_filename));
@@ -31,3 +31,6 @@ public class UploadFileToHdfs {
         }
     }
 }
+
+
+
